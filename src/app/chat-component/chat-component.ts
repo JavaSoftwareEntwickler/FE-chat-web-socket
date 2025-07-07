@@ -3,11 +3,12 @@ import { ChatService } from '../service/chat-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
+import { AutoScrollComponent } from '../auto-scroll-component/auto-scroll-component';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AutoScrollComponent],
   templateUrl: './chat-component.html', 
   styleUrl: './chat-component.css'
 })
