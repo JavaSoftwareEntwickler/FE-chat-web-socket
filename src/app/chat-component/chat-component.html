@@ -1,10 +1,15 @@
 <div>
     <h2>💬 Chat Pubblica</h2>
-    <div *ngFor="let msg of messages">
-        <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+
+    <div class="chat-box">
+        <div *ngFor="let msg of messages" class="chat-message">
+            <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+        </div>
     </div>
 
-    <input [(ngModel)]="sender" placeholder="Nome" />
-    <input [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio" />
-    <button (click)="send()">Invia</button>
+    <div class="input-group">
+        <input type="text" [(ngModel)]="sender" placeholder="Nome" />
+        <input type="text" [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio..." />
+        <button (click)="send()">Invia</button>
+    </div>
 </div>
