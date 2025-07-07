@@ -1,59 +1,131 @@
-# FEChatWebSocket
+# Chat Pubblica Angular Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+## Descrizione
 
-## Development server
+Frontend di una semplice applicazione di chat pubblica in tempo reale, sviluppata con Angular 20 e WebSocket tramite STOMP over SockJS.  
+Supporta l'invio e la ricezione immediata di messaggi tra utenti con autoscroll automatico.
 
-To start a local development server, run:
+---
+
+## Caratteristiche principali
+
+- Architettura standalone Angular (Angular 20)  
+- Comunicazione WebSocket tramite STOMP e SockJS  
+- Gestione messaggi in tempo reale con RxJS BehaviorSubject  
+- Autoscroll intelligente per mostrare sempre l’ultimo messaggio  
+- Input utente con binding bidirezionale (ngModel)  
+- Debug WebSocket con log in console  
+- Componente `AutoScrollComponent` standalone riutilizzabile  
+
+---
+
+## Requisiti
+
+- Node.js >= 18  
+- Angular CLI >= 16  
+- Backend Spring Boot con endpoint WebSocket configurato su `/ws-chat`  
+
+---
+
+## Installazione
+
+1. Clona il repository frontend:
+
+```bash
+git clone https://github.com/JavaSoftwareEntwickler/FE-chat-web-socket.git
+cd FE-chat-web-socket
+````
+
+2. Installa le dipendenze:
+
+```bash
+npm install
+```
+
+---
+
+## Avvio sviluppo
+
+Per avviare l’app in modalità sviluppo con live reload:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L’app sarà accessibile su `http://localhost:4200`.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Configurazione
 
-```bash
-ng generate component component-name
+* Endpoint WebSocket è configurato su `http://localhost:8080/ws-chat` nel servizio `ChatService`.
+* Se necessario, modifica l’URL in `chat-service.ts` per adattarlo al tuo backend.
+
+---
+
+## Struttura del progetto
+
+```
+src/
+│   index.html
+│   main.ts
+│   polyfills.ts
+│   styles.css
+│
+└───app
+    │   app.config.ts
+    │   app.css
+    │   app.html
+    │   app.routes.ts
+    │   app.spec.ts
+    │   app.ts
+    │
+    ├───auto-scroll-component
+    │       auto-scroll-component.css
+    │       auto-scroll-component.html
+    │       auto-scroll-component.ts
+    │
+    ├───chat-component
+    │       chat-component.css
+    │       chat-component.html
+    │       chat-component.ts
+    │
+    └───service
+            chat-service.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Come usare il componente di chat
 
-## Building
+* Inserisci il nome nel campo `Nome`
+* Scrivi il messaggio e premi Invio o clicca `Invia`
+* La chat si aggiornerà in tempo reale con i messaggi degli altri utenti
+* Il contenitore messaggi scrollerà automaticamente verso il basso
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Note
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Lato backend deve essere attivo il server WebSocket conforme alla configurazione Spring Boot.
+* La sicurezza, autenticazione e persistenza messaggi non sono implementate in questa versione demo.
+* Per il Back End vedi il repo : [Spring boot](https://github.com/JavaSoftwareEntwickler/chat-web-socket)  
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Miglioramenti futuri
 
-```bash
-ng test
-```
+* Autenticazione utenti con JWT/OAuth2
+* Persistenza messaggi su database
+* Supporto chat privata e gruppi
+* Miglioramento UX/UI (notifiche, emoji, typing indicator)
+* Gestione errori e riconnessione automatica WebSocket
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Contatti
 
-```bash
-ng e2e
-```
+Max Marchesini – [Sito internet](https://maxmarchesini.it)  
+[LinkedIn](https://www.linkedin.com/in/mmjava/) | [GitHub](https://github.com/JavaSoftwareEntwickler)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
