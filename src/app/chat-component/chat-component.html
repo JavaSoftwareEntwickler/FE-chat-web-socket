@@ -1,13 +1,24 @@
-<h2>💬 Chat Pubblica</h2>
+<div class="chat-layout">
+    <div class="chat-main">
+        <h2>💬 Chat Pubblica</h2>
 
-<app-auto-scroll>
-    <div *ngFor="let msg of messages" class="chat-message">
-        <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+        <app-auto-scroll>
+            <div *ngFor="let msg of messages" class="chat-message">
+                <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+            </div>
+        </app-auto-scroll>
+
+        <div class="input-group">
+            <input type="text" [(ngModel)]="sender" placeholder="Nome" />
+            <input type="text" [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio..." />
+            <button (click)="send()">Invia</button>
+        </div>
     </div>
-</app-auto-scroll>
 
-<div class="input-group">
-    <input type="text" [(ngModel)]="sender" placeholder="Nome" />
-    <input type="text" [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio..." />
-    <button (click)="send()">Invia</button>
+    <div class="chat-user-list">
+        <h3>👥 Utenti Online</h3>
+        <app-auto-scroll>
+            <app-chat-users [users]="connectedUsers"></app-chat-users>
+        </app-auto-scroll>
+    </div>
 </div>

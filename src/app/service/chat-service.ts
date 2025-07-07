@@ -14,11 +14,12 @@ export class ChatService {
   private messageSubject = new BehaviorSubject<ChatMessage | null>(null);
 
   messages$: Observable<ChatMessage | null> = this.messageSubject.asObservable();
+  users$ = new BehaviorSubject<string[]>([]);
 
   constructor() {
     this.rxStomp = new RxStomp();
   }
-
+  
   connect(): void {
     const config: RxStompConfig = {
       webSocketFactory: () => new SockJS('http://localhost:8080/ws-chat'),
