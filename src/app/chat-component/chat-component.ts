@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../service/chat-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-chat',
@@ -10,23 +11,26 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './chat-component.html', 
   styleUrl: './chat-component.css'
 })
+
 export class ChatComponent implements OnInit {
   sender = '';
   message = '';
   messages: { sender: string; content: string }[] = [];
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.chatService.connect();
     this.chatService.messages$.subscribe(msg => {
       if (msg) this.messages.push(msg);
+      this.cdr.detectChanges();
     });
   }
 
   send(): void {
     if (this.sender && this.message) {
       this.chatService.send(this.sender, this.message);
+      // intendi qui?
       this.message = '';
     }
   }
