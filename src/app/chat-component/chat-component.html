@@ -1,0 +1,10 @@
+<div>
+    <h2>💬 Chat Pubblica</h2>
+    <div *ngFor="let msg of messages">
+        <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+    </div>
+
+    <input [(ngModel)]="sender" placeholder="Nome" />
+    <input [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio" />
+    <button (click)="send()">Invia</button>
+</div>
