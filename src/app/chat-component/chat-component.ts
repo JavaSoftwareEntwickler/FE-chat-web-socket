@@ -19,10 +19,16 @@ import { UserContextService } from '../service/chat-user-context-service';
 export class ChatComponent implements OnInit {
   message = '';
   messages: { sender: string; content: string }[] = [];
+  currentSender: string = '';
 
-  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef, private userContextService:UserContextService) {}
+  constructor(
+    private chatService: ChatService, 
+    private cdr: ChangeDetectorRef, 
+    private userContextService:UserContextService
+  ) {}
 
   ngOnInit(): void {
+    this.currentSender = this.userContextService.getSender();
     this.chatService.messages$.subscribe(msg => {
       if (msg) {
         if(this.userContextService.getSender() == msg.sender && msg.messageType =='JOIN'){

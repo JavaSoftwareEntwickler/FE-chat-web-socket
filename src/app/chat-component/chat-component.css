@@ -40,13 +40,28 @@ h2 {
 .chat-message {
     margin: 8px 0;
     padding: 6px 10px;
-    border-radius: 8px;
-    background-color: #e9f5ff;
-    border: 1px solid #d0ebff;
 }
 
 .chat-message strong {
     color: #007bff;
+}
+
+.my-message {
+    background-color: #d1e7dd;
+    text-align: right;
+    margin-left: auto;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    border-radius: 12px 0 12px 12px;
+}
+
+.other-message {
+    background-color: #f8f9fa;
+    text-align: left;
+    margin-right: auto;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    border-radius: 0 12px 12px 12px;
 }
 
 .input-group {

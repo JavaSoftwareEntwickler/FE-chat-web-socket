@@ -9,8 +9,13 @@
         <h2>💬 Chat Pubblica</h2>
 
         <app-auto-scroll>
-            <div *ngFor="let msg of messages" class="chat-message">
-                <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+            <div *ngFor="let msg of messages"
+                [ngClass]="{'my-message': msg.sender === currentSender, 'other-message': msg.sender !== currentSender}"
+                class="chat-message">
+                <div *ngIf="msg.sender !== currentSender">
+                    <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+                </div>
+                {{ msg.content }}
             </div>
         </app-auto-scroll>
 
