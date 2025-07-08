@@ -1,1 +1,55 @@
 /*chat-join.component.css*/
+:host {
+    display: block;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #f7f9fc;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chat-main {
+    flex: 11;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+input {
+    max-width: 285px;
+    border-radius: 12px;
+    font-size: 1em;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-group input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.button {
+
+    width: 80%;
+    padding: 8px;
+    font-size: 0.8em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    max-width: 300px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

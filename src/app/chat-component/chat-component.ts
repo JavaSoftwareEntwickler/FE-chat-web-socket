@@ -46,6 +46,7 @@ export class ChatComponent implements OnInit {
       this.message = '';
     }
   }
+  
   handleEnter(event: any) {
     if (event.shiftKey) return; // consente di andare a capo
     event.preventDefault();     // blocca invio normale

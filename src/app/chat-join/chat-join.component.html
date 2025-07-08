@@ -1,6 +1,13 @@
-<div *ngIf="!submittedJoin" class="input-group">
-    <input type="text" [(ngModel)]="sender" placeholder="Nome" />
-    <button (click)="join()">Entra in chat</button>
+<h2>💬 Chat Pubblica 💬</h2>
+<div class="chat-layout">
+    <div class="chat-main">
+        <div *ngIf="!submittedJoin" class="input-group">
+            <input type="text" [(ngModel)]="sender" (keydown.enter)="join()" placeholder="Digita il tuo nome.." />
+            <button class="button" (click)="join()">Entra in chat</button>
+        </div>
+
+    </div>
+
 </div>
 <div *ngIf="submittedJoin">
     <app-chat></app-chat>
