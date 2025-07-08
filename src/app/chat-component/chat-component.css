@@ -79,9 +79,51 @@ h2 {
 
 .input-group {
     margin-top: 10px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+}
+
+.input-group textarea {
+
+    flex: 1;
+    align-items: center;
+    padding: 10px 45px 10px 15px;
+    /* spazio per la freccia */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    /* rimuove il ridimensionamento manuale */
+    font-size: 14px;
+    outline: none;
+    overflow-y: auto;
+    min-height: 14px;
+    /* opzionale: limite altezza */
+}
+
+.send-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #4e9eff;
+    /* azzurro stile Teams */
+    transition: transform 0.2s ease;
+}
+
+.send-icon:hover svg {
+    transform: scale(1.1);
 }
 
 input[type="text"] {
@@ -90,10 +132,22 @@ input[type="text"] {
     border-radius: 8px;
     outline: none;
     transition: border-color 0.3s;
+
 }
 
 input[type="text"]:focus {
     border-color: #66afe9;
+}
+
+.input-group input[type="text"] {
+    flex: 1;
+    padding-right: 40px;
+    /* spazio per la freccia */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 14px;
+    outline: none;
 }
 
 button {
@@ -118,12 +172,12 @@ button:hover {
 
 .chat-main {
     flex: 3;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 2px;
+    padding-left: 2px;
 }
 
 .chat-user-list-main {
     margin-bottom: 20px;
-    flex: 3;
-    padding-right: 20px;
+    flex: 1;
+    padding-right: 2px;
 }

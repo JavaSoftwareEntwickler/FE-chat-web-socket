@@ -1,13 +1,13 @@
+<h2>💬 Chat Pubblica</h2>
 <div class="chat-layout">
     <div class="chat-user-list-main">
-        <h2>👥 Utenti Online</h2>
+        <!-- <h2>👥 Utenti Online</h2> -->
         <app-auto-scroll>
             <app-chat-users></app-chat-users>
         </app-auto-scroll>
     </div>
     <div class="chat-main">
-        <h2>💬 Chat Pubblica</h2>
-
+        <!-- <h2>💬 Chat Pubblica</h2> -->
         <app-auto-scroll>
             <div *ngFor="let msg of messages"
                 [ngClass]="{'my-message': msg.sender === currentSender, 'other-message': msg.sender !== currentSender}"
@@ -20,8 +20,14 @@
         </app-auto-scroll>
 
         <div class="input-group">
-            <input type="text" [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio..." />
-            <button (click)="send()">Invia</button>
+            <textarea [(ngModel)]="message" (keydown.enter)="handleEnter($event)" placeholder="Digita un messaggio..."
+                rows="1"></textarea>
+            <button class="send-icon" (click)="send()" aria-label="Invia">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#4e9eff">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+                </svg>
+            </button>
         </div>
     </div>
 </div>
