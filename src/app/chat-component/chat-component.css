@@ -4,10 +4,30 @@
     max-width: 600px;
     margin: 40px auto;
     background: #f7f9fc;
-    border: 1px solid #ccc;
+
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chat-layout {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.chat-main {
+    flex: 11;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.chat-user-list-main {
+    margin-bottom: 20px;
+    flex: 1;
+    padding-right: 2px;
+    padding-left: 2px;
+
 }
 
 .chat-box {
@@ -118,23 +138,4 @@
 
 .send-icon:hover svg {
     transform: scale(1.2);
-}
-
-.chat-layout {
-    display: flex;
-    flex-direction: row;
-}
-
-.chat-main {
-    flex: 11;
-    padding-right: 2px;
-    padding-left: 2px;
-}
-
-.chat-user-list-main {
-    margin-bottom: 20px;
-    flex: 1;
-    padding-right: 2px;
-    padding-left: 2px;
-
 }
