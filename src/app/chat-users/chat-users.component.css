@@ -19,6 +19,8 @@ ul {
 
 li {
     border-bottom: none;
+    font-size: 0.8em;
+    color: #007bff;
 }
 
 .current-user {
