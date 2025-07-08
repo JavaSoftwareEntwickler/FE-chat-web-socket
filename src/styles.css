@@ -1,10 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-    font-family: 'Segoe UI',
-        Tahoma,
-        Geneva,
-        Verdana,
-        sans-serif;
+/* ========== Design Tokens (Colori, spaziature, bordi) ========== */
+:root {
+    --color-light-bg: #f8f9fa;
+    --color-border: #dee2e6;
+    --color-blue-light: #e9f5ff;
+    --color-blue-border: #d0ebff;
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-green-light: #d1e7dd;
+    --color-green-text: #0f5132;
+
+    --padding-small: 6px;
+    --padding-medium: 10px;
+    --radius-default: 8px;
+}
+
+/* ========== Utility classes ========== */
+.box {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-default);
+    background: white;
+    padding: var(--padding-medium);
+}
+
+.chat-bubble {
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: var(--padding-small) var(--padding-medium);
+    margin: 8px 0;
+}
+
+.font-small {
+    font-size: 0.85em;
+}
+
+.bg-light {
+    background-color: var(--color-light-bg);
+}
+
+.bg-blue-light {
+    background-color: var(--color-blue-light);
+    border: 1px solid var(--color-blue-border);
+}
+
+.bg-green-light {
+    background-color: var(--color-green-light);
+    border: 1px solid #badbcc;
+    color: var(--color-green-text);
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h2 {

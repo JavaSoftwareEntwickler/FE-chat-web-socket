@@ -1,8 +1,9 @@
+/*auto-scroll-component.css*/
 .scroll-container {
     overflow-y: auto;
     max-height: 300px;
     min-height: 300px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #d0ebff;
     border-radius: 8px;
     background: white;
     padding: 10px;
