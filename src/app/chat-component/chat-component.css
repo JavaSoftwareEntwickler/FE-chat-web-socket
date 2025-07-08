@@ -2,20 +2,11 @@
     display: block;
     max-width: 600px;
     margin: 40px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f7f9fc;
     border: 1px solid #dee2e6;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 24px;
 }
 
 .chat-box {
@@ -94,7 +85,7 @@ h2 {
     border-radius: 8px;
     resize: none;
     /* rimuove il ridimensionamento manuale */
-    font-size: 14px;
+    font-size: 1.1em;
     outline: none;
     overflow-y: auto;
     min-height: 14px;
@@ -146,23 +137,8 @@ input[type="text"]:focus {
     border-radius: 8px;
     border: 1px solid #ccc;
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 1.1em;
     outline: none;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 .chat-layout {
