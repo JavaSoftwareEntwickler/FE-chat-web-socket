@@ -1,5 +1,7 @@
 <div class="chat-users-list">
     <ul>
-        <li *ngFor="let user of users$ | async">{{ user }}</li>
+        <li *ngFor="let user of users$ | async" [ngClass]="{'current-user': user === currentSender}">
+            {{ user }}
+        </li>
     </ul>
 </div>

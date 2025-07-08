@@ -12,8 +12,8 @@
             <div *ngFor="let msg of messages"
                 [ngClass]="{'my-message': msg.sender === currentSender, 'other-message': msg.sender !== currentSender}"
                 class="chat-message">
-                <div *ngIf="msg.sender !== currentSender">
-                    <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+                <div *ngIf="msg.sender !== currentSender" class="sender-label">
+                    <strong>{{ msg.sender }}:</strong>
                 </div>
                 {{ msg.content }}
             </div>

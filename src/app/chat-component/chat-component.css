@@ -53,6 +53,9 @@ h2 {
     color: #0f5132;
     border: 1px solid #badbcc;
     border-radius: 12px 0 12px 12px;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .other-message {
@@ -62,6 +65,16 @@ h2 {
     color: #212529;
     border: 1px solid #dee2e6;
     border-radius: 0 12px 12px 12px;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.sender-label {
+    font-size: 0.7em;
+    font-weight: 500;
+    margin-bottom: 2px;
+    text-align: left;
 }
 
 .input-group {

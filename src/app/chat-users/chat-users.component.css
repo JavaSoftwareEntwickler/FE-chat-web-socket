@@ -27,3 +27,8 @@ li {
     padding: 6px 0;
     border-bottom: 1px solid #e0e0e0;
 }
+
+.current-user {
+    color: #0f5132;
+    font-weight: bold;
+}
