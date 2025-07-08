@@ -1,6 +1,5 @@
-<div class="users-container">
-
+<div class="chat-users-list">
     <ul>
-        <li *ngFor="let user of users">{{ user }}</li>
+        <li *ngFor="let user of users$ | async">{{ user }}</li>
     </ul>
 </div>

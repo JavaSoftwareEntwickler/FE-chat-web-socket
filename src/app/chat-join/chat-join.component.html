@@ -1,0 +1,7 @@
+<div *ngIf="!submittedJoin" class="input-group">
+    <input type="text" [(ngModel)]="sender" placeholder="Nome" />
+    <button (click)="join()">Entra in chat</button>
+</div>
+<div *ngIf="submittedJoin">
+    <app-chat></app-chat>
+</div>

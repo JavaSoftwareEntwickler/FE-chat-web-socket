@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChatService } from '../service/chat-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { AutoScrollComponent } from '../auto-scroll-component/auto-scroll-component';
 import { ChatUsersComponent } from '../chat-users/chat-users.component';
+import { UserContextService } from '../service/chat-user-context-service';
+
 
 @Component({
   selector: 'app-chat',
@@ -15,37 +17,30 @@ import { ChatUsersComponent } from '../chat-users/chat-users.component';
 })
 
 export class ChatComponent implements OnInit {
-  sender = '';
   message = '';
   messages: { sender: string; content: string }[] = [];
-  connectedUsers: string[] = [];
 
-  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef) {}
+  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef, private userContextService:UserContextService) {}
 
   ngOnInit(): void {
-    this.chatService.connect();
     this.chatService.messages$.subscribe(msg => {
       if (msg) {
-        this.messages.push(msg);
-        this.addUser(msg.sender);
+        if(this.userContextService.getSender() == msg.sender && msg.messageType =='JOIN'){
+
+        }else{
+          this.messages.push(msg);
+        }
       }
       this.cdr.detectChanges();
     });
-    
   }
 
   send(): void {
-    if (this.sender && this.message) {
-      this.chatService.send(this.sender, this.message);
+    if (this.message) {
+      this.chatService.send(this.userContextService.getSender() , this.message);
       this.cdr.detectChanges();
       this.message = '';
     }
   }
-  private addUser(user: string): void {
-    const currentUsers = this.chatService.users$.value;
-    if (!currentUsers.includes(user)) {
-      this.chatService.users$.next([...currentUsers, user]);
-      this.connectedUsers.push(user);
-    }
-  }
+
 }

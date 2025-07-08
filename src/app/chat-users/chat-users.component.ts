@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChatService } from '../service/chat-service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chat-users',
@@ -9,5 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './chat-users.component.css'
 })
 export class ChatUsersComponent {
-  @Input() users: string[] = [];
+  users$: Observable<string[]>;
+  // usa il chat service per recuperare la lista di sender attivi
+  constructor(private chatService: ChatService) {
+    this.users$ = this.chatService.users$;
+  }
 }

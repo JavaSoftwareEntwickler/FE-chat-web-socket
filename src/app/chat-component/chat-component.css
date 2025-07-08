@@ -50,6 +50,7 @@ h2 {
 }
 
 .input-group {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -93,8 +94,8 @@ button:hover {
     padding-left: 20px;
 }
 
-.chat-user-list {
-    margin-top: 8px;
-    flex: 1;
+.chat-user-list-main {
+    margin-bottom: 20px;
+    flex: 3;
     padding-right: 20px;
 }

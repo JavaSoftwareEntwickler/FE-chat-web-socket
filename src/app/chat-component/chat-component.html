@@ -1,4 +1,10 @@
 <div class="chat-layout">
+    <div class="chat-user-list-main">
+        <h2>👥 Utenti Online</h2>
+        <app-auto-scroll>
+            <app-chat-users></app-chat-users>
+        </app-auto-scroll>
+    </div>
     <div class="chat-main">
         <h2>💬 Chat Pubblica</h2>
 
@@ -9,16 +15,8 @@
         </app-auto-scroll>
 
         <div class="input-group">
-            <input type="text" [(ngModel)]="sender" placeholder="Nome" />
             <input type="text" [(ngModel)]="message" (keyup.enter)="send()" placeholder="Scrivi un messaggio..." />
             <button (click)="send()">Invia</button>
         </div>
-    </div>
-
-    <div class="chat-user-list">
-        <h3>👥 Utenti Online</h3>
-        <app-auto-scroll>
-            <app-chat-users [users]="connectedUsers"></app-chat-users>
-        </app-auto-scroll>
     </div>
 </div>
