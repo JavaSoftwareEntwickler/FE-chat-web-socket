@@ -1,12 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ChatService } from '../service/chat-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ChangeDetectorRef } from '@angular/core';
 import { AutoScrollComponent } from '../auto-scroll-component/auto-scroll-component';
 import { ChatUsersComponent } from '../chat-users/chat-users.component';
 import { UserContextService } from '../service/chat-user-context-service';
-
 
 @Component({
   selector: 'app-chat',
